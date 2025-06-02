@@ -32,6 +32,6 @@ def sort_files(files):
             # shutil.move will move the file
             # first specify the files that will move (i - the source)
             # and then specify where they will move to (the destination)
-            shutil.move(str(i), str(Path.home() / "Downloads" / i.name))
+            shutil.move(str(i), str(folder_path / i.name))
 
 sort_files(downloads)
