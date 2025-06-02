@@ -29,9 +29,9 @@ def sort_files(files):
                 # make the new directory
                 folder_path.mkdir(exist_ok=True)
 
-            # shutil.move will move the file
-            # first specify the files that will move (i - the source)
-            # and then specify where they will move to (the destination)
-            shutil.move(str(i), str(folder_path / i.name))
+                # shutil.move will move the file
+                # first specify the files that will move (i - the source)
+                # and then specify where they will move to (the destination)
+                shutil.move(str(i), str(folder_path / i.name))
 
 sort_files(downloads)
