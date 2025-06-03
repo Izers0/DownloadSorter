@@ -1,10 +1,15 @@
 import shutil
 from pathlib import Path
+from plyer import notification
+from datetime import datetime
+
+time = datetime.now()
+currentTime = time.strftime("%H:%M:%S")
 
 # Access the download folder of system
 downloads = Path.home() / "Downloads"
 
-def sort_files(files):
+def sort_files(x):
 
     # loop through the download folder and only search for .pdf files and exclude folders
     # .iterdir() is needed to loop through the paths
@@ -33,5 +38,11 @@ def sort_files(files):
                 # first specify the files that will move (i - the source)
                 # and then specify where they will move to (the destination)
                 shutil.move(str(i), str(folder_path / i.name))
+
+                notification.notify(
+                    title="Files Moved",
+                    message=f"{i.name} -> {folder_name} at {currentTime}"
+                )
+
 
 sort_files(downloads)
