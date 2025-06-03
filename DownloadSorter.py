@@ -4,12 +4,12 @@ from plyer import notification
 from datetime import datetime
 
 time = datetime.now()
-currentTime = time.strftime("%H:%M:%S")
+currentTime = time.strftime("%H:%M")
 
 # Access the download folder of system
 downloads = Path.home() / "Downloads"
 
-def sort_files(x):
+def sort_files():
 
     # loop through the download folder and only search for .pdf files and exclude folders
     # .iterdir() is needed to loop through the paths
@@ -45,4 +45,4 @@ def sort_files(x):
                 )
 
 
-sort_files(downloads)
+sort_files()
